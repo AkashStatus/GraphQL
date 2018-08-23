@@ -1,0 +1,75 @@
+{
+  message                                 ......... 4000 port
+  name                         
+}
+
+
+
+{                                                         ............... 4001 port
+  course (id: 1) {
+    id
+  }
+  courses(topic: "Node.js") {
+    id
+    topic
+  }
+}
+
+query getcourse($CN : Int!){ 
+  course (id: $CN) {
+    id
+    topic
+  }
+  courses(topic: "Node.js") {
+    id
+    topic
+  }
+}
+variables 
+{
+  "CN": 1
+}
+
+
+{                                           .......... 4002 port
+  getUser {
+    first_name
+    last_name
+    email
+  }
+}
+
+
+
+mutation{                                           ........................ 4003 port
+  createUser(input: {
+        first_name: "mit"
+        last_name: "patel"
+        email : "amitpatel@gmail.com"
+        password: "1231434"
+        status: "active"
+        salary: 2600
+        department: "CSE"
+  }){
+    first_name
+        last_name
+        email 
+        password
+        status
+        salary
+        department
+  }
+}
+
+
+
+mutation {updateUser(email : "amitpatel@gmail.com" , first_name: "amit"){
+           first_name
+           last_name
+          email 
+          password
+          status
+          salary
+         department
+}
+}
